@@ -1,5 +1,5 @@
 // Función para cargar la lista de platillos en la vista
-function cargarPlatillos() {
+function cargarPlatillosEliminar() {
     const interval = setInterval(() => {
         const container = document.getElementById("platillosListDelete");
         if (container) {
@@ -9,7 +9,7 @@ function cargarPlatillos() {
                 const platilloItem = `
                     <div class="d-flex justify-content-between mb-2">
                         <span>${platillo.nombre}</span>
-                        <button class="btn btn-danger" onclick="eliminarPlatillo(${index})">Eliminar</button>
+                        <button class="btn btn-danger" onclick="mostrarModalEliminarPlatillo(${index})">Eliminar</button>
                     </div>
                 `;
                 container.innerHTML += platilloItem;
@@ -19,7 +19,7 @@ function cargarPlatillos() {
 }
 
 // Función para abrir el modal de confirmación de eliminación
-function eliminarPlatillo(index) {
+function mostrarModalEliminarPlatillo(index) {
     // Guardar el índice del platillo para confirmación posterior
     document.getElementById("eliminarModal").setAttribute("data-index", index);
 
@@ -29,7 +29,7 @@ function eliminarPlatillo(index) {
 }
 
 // Función para confirmar la eliminación
-function confirmarEliminacion() {
+function confirmarEliminarPlatillo() {
     const index = document.getElementById("eliminarModal").getAttribute("data-index");
 
     // Eliminar el platillo de la lista
@@ -44,11 +44,11 @@ function confirmarEliminacion() {
     eliminacionExitosa.show();
 
     // Recargar la lista de platillos
-    cargarPlatillos();
+    cargarPlatillosEliminar();
 }
 
 // Función para cancelar la eliminación
-function cancelarEliminacion() {
+function cancelarEliminarPlatillo() {
     // Cerrar el modal de eliminación
     const eliminarModal = bootstrap.Modal.getInstance(document.getElementById("eliminarModal"));
     eliminarModal.hide();
@@ -59,4 +59,4 @@ function cancelarEliminacion() {
 }
 
 // Ejecutar la función al cargar la página
-document.addEventListener("DOMContentLoaded", cargarPlatillos);
+document.addEventListener("DOMContentLoaded", cargarPlatillosEliminar);
