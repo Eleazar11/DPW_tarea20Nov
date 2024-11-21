@@ -1,0 +1,27 @@
+<section class="mt-5">
+    <h1 class="text-center">Ver Platillos</h1>
+    <p class="text-center">Lista de platillos existentes.</p>
+    <div class="container mt-4">
+        <div id="platillosContainer" class="row">
+            <!-- Aquí se agregarán las tarjetas dinámicamente -->
+        </div>
+    </div>
+</section>
+
+<!-- Modal para mostrar detalles -->
+<div class="modal fade" id="detalleModal" tabindex="-1" aria-labelledby="detalleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detalleModalLabel">Detalles del Platillo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="" class="img-fluid mb-3">
+                <h5 id="modalNombre"></h5>
+                <p id="modalDescripcion"></p>
+                <p><strong>Precio:</strong> Q<span id="modalPrecio"></span></p>
+            </div>
+        </div>
+    </div>
+</div>

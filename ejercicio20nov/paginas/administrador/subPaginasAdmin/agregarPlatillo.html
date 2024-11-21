@@ -1,0 +1,74 @@
+<section class="mt-5">
+    <h1 class="text-center">Agregar Platillo</h1>
+    <form class="mt-4" onsubmit="validarFormulario(event)">
+        <div class="mb-3">
+            <label for="platilloNombre" class="form-label">Nombre del Platillo</label>
+            <input type="text" class="form-control" id="platilloNombre">
+        </div>
+        <div class="mb-3">
+            <label for="platilloDescripcion" class="form-label">Descripción</label>
+            <textarea class="form-control" id="platilloDescripcion" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="platilloPrecio" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="platilloPrecio">
+        </div>
+        <div class="mb-3">
+            <label for="platilloImagen" class="form-label">Imagen</label>
+            <input type="file" class="form-control" id="platilloImagen" accept="image/*" onchange="mostrarImagen()">
+            <div class="mt-3">
+                <img id="imagenMuestra" src="" alt="Vista previa" class="img-fluid" style="max-height: 200px; display: none;">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+</section>
+
+<!-- Modal de error -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Error: No se pudo agregar el platillo. Por favor, complete todos los campos.
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de confirmación -->
+<div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmModalLabel">Confirmar Agregar Platillo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea agregar este platillo?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="agregarPlatillo()">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de éxito -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Platillo Agregado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                El platillo se agregó exitosamente.
+            </div>
+        </div>
+    </div>
+</div>

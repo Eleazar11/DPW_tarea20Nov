@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador</title>
+    <link rel="icon" href="../../assets/img/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-dark text-white p-3" style="width: 250px; height: 100vh; position: fixed;">
+            <h3 class="text-center py-3">Panel Administrador:b</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white" onclick="loadPage('home')">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white" onclick="loadPage('verPlatillos')">Ver Platillos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white" onclick="loadPage('agregarPlatillo')">Agregar Platillo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white" onclick="loadPage('editarPlatillo')">Editar Platillos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white" onclick="loadPage('eliminarPlatillo')">Eliminar Platillos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white" onclick="cerrarSesion()">Cerrar Sesión</a>
+                </li>                
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div id="content" class="p-4" style="margin-left: 250px; width: calc(100% - 250px);">
+            <!-- Aquí se cargará el contenido dinámico -->
+        </div>
+    </div>
+
+    <script src="../../assets/js/cargarPag.js"></script>
+    <script src="../../assets/js/editarPlatillos.js"></script>
+    <script src="../../assets/js/agregarPlatillo.js"></script>
+    <script src="../../assets/js/platillos.js"></script>
+    <script src="../../assets/js/cerrarSesion.js"></script>
+    <script src="../../assets/js/eliminarPlatillo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
