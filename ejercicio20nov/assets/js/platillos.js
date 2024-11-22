@@ -67,12 +67,12 @@ const platillos = [
     }
 ];
 
-// Función para cargar los platillos en la vista
+// cargar los platillos
 function cargarPlatillos() {
     const interval = setInterval(() => {
         const container = document.getElementById("platillosContainer");
         if (container) {
-            clearInterval(interval); // Detener espera al encontrar contenedor
+            clearInterval(interval); 
             
             platillos.forEach((platillo, index) => {
                 const card = `
@@ -92,7 +92,7 @@ function cargarPlatillos() {
     }, 100);
 }
 
-// Función para mostrar el modal con detalles del platillo
+// mostrar modal con detalles del platillo
 function mostrarDetalles(index) {
     const platillo = platillos[index];
     document.getElementById("modalImg").src = platillo.ruta;
@@ -100,12 +100,11 @@ function mostrarDetalles(index) {
     document.getElementById("modalDescripcion").textContent = platillo.descripcion;
     document.getElementById("modalPrecio").textContent = platillo.precio;
     
-    // Mostrar el modal
+
     const modal = new bootstrap.Modal(document.getElementById("detalleModal"));
     modal.show();
 }
 
-// Ejecutar la función al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     cargarPlatillos();
 });
